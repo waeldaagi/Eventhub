@@ -12,6 +12,7 @@ import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { ListEventComponent } from './components/list-event/list-event.component';
 import { PillNavComponent } from './components/pill-nav/pill-nav.component';
 import { CostumDirDirective } from './costum-dir.directive';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CostumDirDirective } from './costum-dir.directive';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   providers: [
     provideClientHydration()

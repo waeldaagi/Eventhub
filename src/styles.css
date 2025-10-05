@@ -40,3 +40,10 @@ body.dark-theme select:focus {
   border-color: #0d6efd;
   outline: none;
 }
+
+/* Highlight hover style used by appHighlight directive */
+.highlight {
+  background-color: yellow;
+  padding: 10px;
+  border: 1px solid black;
+}

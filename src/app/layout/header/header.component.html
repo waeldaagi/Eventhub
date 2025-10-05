@@ -5,6 +5,13 @@
       <h1>EventHub</h1>
     </div>
     <div class="nav-center">
+      <!-- Ancienne liaison de classe (question 2):
+      <nav [class]="isAdmin ? 'navbar navbar-expand-lg navbar-dark bg-dark' : 'navbar navbar-expand-lg navbar-light bg-light'">
+      -->
+      <nav [ngClass]="{
+        'navbar navbar-expand-lg navbar-dark bg-dark': isAdmin,
+        'navbar navbar-expand-lg navbar-light bg-light': !isAdmin
+      }">
       <app-pill-nav
         logo=""
         logoAlt="EventHub Logo"
@@ -17,6 +24,7 @@
         hoveredPillTextColor="#ffffff"
         pillTextColor="#2c2c2c">
       </app-pill-nav>
+      </nav>
     </div>
     <div class="theme-toggle">
       <button class="theme-btn light" (click)="toggleTheme()">
@@ -34,6 +42,13 @@
       <h1>EventHub</h1>
     </div>
     <div class="nav-center">
+      <!-- Ancienne liaison de classe (question 2):
+      <nav [class]="isAdmin ? 'navbar navbar-expand-lg navbar-dark bg-dark' : 'navbar navbar-expand-lg navbar-light bg-light'">
+      -->
+      <nav [ngClass]="{
+        'navbar navbar-expand-lg navbar-dark bg-dark': isAdmin,
+        'navbar navbar-expand-lg navbar-light bg-light': !isAdmin
+      }">
       <app-pill-nav
         logo=""
         logoAlt="EventHub Logo"
@@ -46,6 +61,7 @@
         hoveredPillTextColor="#2c2c2c"
         pillTextColor="#ffffff">
       </app-pill-nav>
+      </nav>
     </div>
     <div class="theme-toggle">
       <button class="theme-btn dark" (click)="toggleTheme()">

@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
 
   activeHref: string = '/';
   isDarkMode: boolean = false;
+  isAdmin: boolean = true;
 
   @Output() themeChanged = new EventEmitter<boolean>();
 
