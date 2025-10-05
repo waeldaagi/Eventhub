@@ -1,0 +1,116 @@
+<!-- Mode clair -->
+<div class="home-container light-theme" *ngIf="!isDarkMode">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1 class="hero-title">Bienvenue sur EventHub</h1>
+    <p class="hero-description">
+      La plateforme pour créer, gérer et participer à vos événements préférés. 
+      Réservez vos tickets en ligne et partagez vos retours en toute simplicité.
+    </p>
+    <div class="hero-buttons">
+      <button class="btn btn-primary" routerLink="/events">Découvrir les événements</button>
+      <button class="btn btn-secondary">Créer un compte</button>
+    </div>
+  </section>
+
+  <!-- Feature Cards Section -->
+  <section class="features-section">
+    <div class="feature-card">
+      <div class="card-image">
+        <img src="/images/ticket.png" alt="Tickets" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-subtitle">Achetez vos tickets</h3>
+        <p class="card-description">
+          Réservez en quelques clics, rapidement et en toute sécurité.
+        </p>
+        <button class="btn btn-primary" routerLink="/events">Mes Tickets</button>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="card-image">
+        <img src="/images/event.png" alt="Events" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-subtitle">Organisez vos événements</h3>
+        <p class="card-description">
+          Publiez, gérez et suivez vos ventes facilement grâce à EventHub.
+        </p>
+        <button class="btn btn-secondary" routerLink="/events">Voir les événements</button>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="card-image">
+        <img src="/images/feedback.png" alt="Feedback" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-subtitle">Partagez votre avis</h3>
+        <p class="card-description">
+          Aidez la communauté en donnant vos feedbacks et notes.
+        </p>
+        <button class="btn btn-secondary">Donner un feedback</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Mode sombre -->
+<div class="home-container dark-theme" *ngIf="isDarkMode">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1 class="hero-title">Bienvenue sur EventHub</h1>
+    <p class="hero-description">
+      La plateforme pour créer, gérer et participer à vos événements préférés. 
+      Réservez vos tickets en ligne et partagez vos retours en toute simplicité.
+    </p>
+    <div class="hero-buttons">
+      <button class="btn btn-primary-dark" routerLink="/events">Découvrir les événements</button>
+      <button class="btn btn-secondary-dark">Créer un compte</button>
+    </div>
+  </section>
+
+  <!-- Feature Cards Section -->
+  <section class="features-section">
+    <div class="feature-card">
+      <div class="card-image">
+        <img src="/images/ticket.png" alt="Tickets" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-subtitle">Achetez vos tickets</h3>
+        <p class="card-description">
+          Réservez en quelques clics, rapidement et en toute sécurité.
+        </p>
+        <button class="btn btn-primary-dark" routerLink="/events">Mes Tickets</button>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="card-image">
+        <img src="/images/event.png" alt="Events" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-subtitle">Organisez vos événements</h3>
+        <p class="card-description">
+          Publiez, gérez et suivez vos ventes facilement grâce à EventHub.
+        </p>
+        <button class="btn btn-secondary-dark" routerLink="/events">Voir les événements</button>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="card-image">
+        <img src="/images/feedback.png" alt="Feedback" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-subtitle">Partagez votre avis</h3>
+        <p class="card-description">
+          Aidez la communauté en donnant vos feedbacks et notes.
+        </p>
+        <button class="btn btn-secondary-dark">Donner un feedback</button>
+      </div>
+    </div>
+  </section>
+</div>
+

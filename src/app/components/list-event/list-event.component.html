@@ -1,0 +1,63 @@
+<div class="events-container">
+  <h2 class="events-title">Liste des Événements</h2>
+  
+  <!-- Barre de recherche -->
+  <div class="search-container">
+    <div class="search-box">
+      <i class="search-icon">🔍</i>
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm"
+        (input)="onSearchChange()"
+        placeholder="Rechercher par titre ou lieu..."
+        class="search-input">
+    </div>
+    <div class="search-results" *ngIf="searchTerm">
+      <span class="results-count">{{ filteredEvents.length }} événement(s) trouvé(s)</span>
+    </div>
+  </div>
+  
+  <div class="events-grid">
+    <div class="event-card" *ngFor="let event of filteredEvents">
+      <div class="event-image">
+        <img [src]="event.imageUrl" [alt]="event.titre" />
+        <div class="event-price">{{ event.prix | currency:'TND'  }} </div>
+      </div>
+      
+      <div class="event-content">
+        <h3 class="event-title">{{ event.titre | titlecase }}</h3>
+        <p class="event-description">{{ event.description }}</p>
+        
+        <div class="event-details">
+          <div class="event-detail">
+            <i class="icon">📅</i>
+            <span>{{ event.date | date:'dd/MM/yyyy à HH:mm' }}</span>
+          </div>
+          <div class="event-detail">
+            <i class="icon">📍</i>
+            <span>{{ event.lieu }}</span>
+          </div>
+          <div class="event-detail">
+            <i class="icon">👥</i>
+            <span>{{ event.nbplaces }} places disponibles</span>
+          </div>
+          <div class="event-detail">
+            <i class="icon">❤️</i>
+            <span>{{ event.nbrLike }} likes</span>
+            <button 
+              [class]="getLikeButtonClass(event)"
+              [disabled]="isEventExpired(event)"
+              (click)="likeEvent(event.id)">
+              {{ isEventExpired(event) ? 'Expiré' : 'Like' }}
+            </button>
+          </div>
+        </div>
+        
+        <div class="event-actions">
+          <button class="btn btn-primary">Réserver</button>
+          <button class="btn btn-secondary">Détails</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

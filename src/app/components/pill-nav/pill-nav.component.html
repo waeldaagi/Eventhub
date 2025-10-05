@@ -1,0 +1,93 @@
+<div class="pill-nav-container">
+  <nav class="pill-nav" [class]="className" aria-label="Primary" [ngStyle]="getCssVars()">
+
+
+    <!-- Desktop Navigation -->
+    <div class="pill-nav-items desktop-only" #navItemsRef>
+      <ul class="pill-list" role="menubar">
+        <li *ngFor="let item of items; let i = index" role="none">
+          <!-- Router Link -->
+          <a
+            *ngIf="isRouterLink(item.href)"
+            role="menuitem"
+            [routerLink]="item.href"
+            class="pill"
+            [class.is-active]="activeHref === item.href"
+            [attr.aria-label]="item.ariaLabel || item.label"
+            (mouseenter)="handleEnter(i)"
+            (mouseleave)="handleLeave(i)">
+            <span
+              class="hover-circle"
+              aria-hidden="true"
+              [attr.data-index]="i">
+            </span>
+            <span class="label-stack">
+              <span class="pill-label">{{ item.label }}</span>
+              <span class="pill-label-hover" aria-hidden="true">
+                {{ item.label }}
+              </span>
+            </span>
+          </a>
+          
+          <!-- External Link -->
+          <a
+            *ngIf="!isRouterLink(item.href)"
+            role="menuitem"
+            [href]="item.href"
+            class="pill"
+            [class.is-active]="activeHref === item.href"
+            [attr.aria-label]="item.ariaLabel || item.label"
+            (mouseenter)="handleEnter(i)"
+            (mouseleave)="handleLeave(i)">
+            <span
+              class="hover-circle"
+              aria-hidden="true"
+              [attr.data-index]="i">
+            </span>
+            <span class="label-stack">
+              <span class="pill-label">{{ item.label }}</span>
+              <span class="pill-label-hover" aria-hidden="true">
+                {{ item.label }}
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="mobile-menu-button mobile-only"
+      (click)="toggleMobileMenu()"
+      aria-label="Toggle menu"
+      #hamburgerRef>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-popover mobile-only" #mobileMenuRef [ngStyle]="getCssVars()">
+    <ul class="mobile-menu-list">
+      <li *ngFor="let item of items">
+        <a
+          *ngIf="!isRouterLink(item.href)"
+          [href]="item.href"
+          class="mobile-menu-link"
+          [class.is-active]="activeHref === item.href"
+          (click)="isMobileMenuOpen = false">
+          {{ item.label }}
+        </a>
+        
+        <a
+          *ngIf="isRouterLink(item.href)"
+          [routerLink]="item.href"
+          class="mobile-menu-link"
+          [class.is-active]="activeHref === item.href"
+          (click)="isMobileMenuOpen = false">
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<!-- Header en mode clair -->
+<header class="header light-theme" *ngIf="!isDarkMode">
+  <div class="header-content">
+    <div class="logo">
+      <h1>EventHub</h1>
+    </div>
+    <div class="nav-center">
+      <app-pill-nav
+        logo=""
+        logoAlt="EventHub Logo"
+        [items]="navItems"
+        [activeHref]="activeHref"
+        className="custom-nav"
+        ease="power2.easeOut"
+        baseColor="#2c2c2c"
+        pillColor="#ffffff"
+        hoveredPillTextColor="#ffffff"
+        pillTextColor="#2c2c2c">
+      </app-pill-nav>
+    </div>
+    <div class="theme-toggle">
+      <button class="theme-btn light" (click)="toggleTheme()">
+        <span class="theme-icon">🌙</span>
+        <span class="theme-text">Mode Sombre</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Header en mode sombre -->
+<header class="header dark-theme" *ngIf="isDarkMode">
+  <div class="header-content">
+    <div class="logo">
+      <h1>EventHub</h1>
+    </div>
+    <div class="nav-center">
+      <app-pill-nav
+        logo=""
+        logoAlt="EventHub Logo"
+        [items]="navItems"
+        [activeHref]="activeHref"
+        className="custom-nav"
+        ease="power2.easeOut"
+        baseColor="#ffffff"
+        pillColor="#2c2c2c"
+        hoveredPillTextColor="#2c2c2c"
+        pillTextColor="#ffffff">
+      </app-pill-nav>
+    </div>
+    <div class="theme-toggle">
+      <button class="theme-btn dark" (click)="toggleTheme()">
+        <span class="theme-icon">☀️</span>
+        <span class="theme-text">Mode Clair</span>
+      </button>
+    </div>
+  </div>
+</header>
